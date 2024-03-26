@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>products</title>
+<style>
+    body{
+        background-image: url('{% static "od.4.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .head_product{
+        margin-left: 120px;
+        margin-top: 128px;
+    }
+    .button{
+        background-color:#FAEBD7;
+        color:black;
+        text-decoration: none;
+        text-align:center;
+        width:100px;
+        color:black;
+        padding:3px;
+    }
+    .button a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <div class="head_product">
+    <h1>{{ product.title }}</h1>
+     <img src="data:image/jpg;base64, {{ product.base_64 }}" width="300"/>
+    <p><b>Name:</b> {{ product.title }}</p>
+    <p><b>Info:</b> {{ product.info }}</p>
+    <p><b>Price:</b> {{ product.price }}</p>
+    <a href="{% url 'order_product' %}"><button class="button">Order</button></a>
+
+    </div>
+</body>
+</html>

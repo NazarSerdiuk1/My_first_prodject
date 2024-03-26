@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+<style>
+  body{
+     background-image: url('{% static "head_page_image.jpg" %}');
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
+  .head_line {
+            list-style:none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            width:1920px;
+            margin-left:-8px;
+            margin-top: -10px;
+            border-radius: 30px;
+  }
+  .head_line li {
+            width: 25%;
+            margin: 0;
+            padding: 0
+  }
+  .head_line a {
+            background: #FAEBD7;
+            display: block;
+            color: black;
+            font-size: 40px;
+            text-decoration: none;
+            text-align:center;
+            padding: 10px;
+  }
+  li:hover a{
+            background: #FAF0E6;
+  }
+  .p_odessa{
+        font-size: 50px;
+        margin-left: 450px;
+        margin-top: 100px;
+  }
+  .p_new_pizza{
+        font-size: 30px;
+        margin-left: 100px;
+  }
+  .real{
+     margin-left: 750px;
+     font-size: 30px;
+     color: black;
+  }
+  .meat_p{
+       margin-left: 350px;
+  }
+  .pizzas{
+    font-size:20px;
+     margin-left: 440px;
+     color: black;
+     margin-top: 2px;
+  }
+  .news a{
+        text-decoration:none;
+
+  }
+  .meat_p2{
+       margin-left: 950px;
+      margin-top: -800px;
+  }
+  .news2{
+        margin-top:-55px;
+  }
+  .pizzas2{
+        margin-left: 1045px;
+        margin-top: 1px;
+        font-size:20px;
+        color: black;
+  }
+  .news2 a{
+        text-decoration:none;
+  }
+</style>
+</head>
+<body>
+  <div>
+      <ul class="head_line">
+          <li><a href="{% url 'home' %}">Head page</a></li>
+          <li><a href="http://127.0.0.1:8000/my_shop_app/catalog/menu/">Catalog</a></li>
+          <li><a href="{% url 'about_us' %}">About</a></li>
+          <li><a href="{% url 'log_page' %}">Log in</a></li>
+      </ul>
+  </div>
+  <div class="head_div_odessa">
+        <p class="p_odessa"><b>Pizza Odessa - the taste of Odessa in a skin crunch</b></p>
+  </div>
+  <div class="new_pizza">
+        <p class="p_new_pizza">Welcome to a unique pizzeria in the heart of Odessa! Our pizzeria offers a unique combination of fresh ingredients, traditional recipes and a cozy atmosphere. Savor the variety of flavors of our Italian inspired pizzas and enjoy every treat with your friends and family. A great place for real gourmets and connoisseurs of real Odessa pizza!</p>
+  </div>
+  <div class="news">
+       <p class="real">Our signature pizzas</p>
+      <a href="http://127.0.0.1:8000/my_shop_app/product/2/">
+      <img class="meat_p" src="{% static 'meat-pizza.png' %}" width="300">
+      <p class="pizzas">Hunter Pizza</p>
+      </a>
+  <div class="news2">
+      <a href="http://127.0.0.1:8000/my_shop_app/product/1/">
+         <img class="meat_p2" src="{% static 'cheese-peproni.png' %}" width="300">
+        <p class="pizzas2">Pepperoni Pizza</p>
+      </a>
+  </div>
+</div>
+</body>
+</html>

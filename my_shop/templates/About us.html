@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About_us</title>
+</head>
+<style>
+   body{
+     background-image: url('{% static "ods.jpg" %}');
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
+  .head_line {
+            list-style:none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            width:1920px;
+            margin-left:-8px;
+            margin-top: -10px;
+            border-radius: 30px;
+  }
+  .head_line li {
+            width: 25%;
+            margin: 0;
+            padding: 0
+  }
+  .head_line a {
+            background: #FAEBD7;
+            display: block;
+            color: black;
+            font-size: 40px;
+            text-decoration: none;
+            text-align:center;
+            padding: 10px;
+  }
+  li:hover a{
+            background: #FAF0E6;
+  }
+  .about_us{
+         white-space: pre-line;
+         font-size: 25px;
+         margin-left:105px;
+         margin-top:50px;
+         color:black;
+  }
+  .inst{
+        margin-left: 450px;
+  }
+  .face_b{
+      margin-left: 850px;
+      margin-top: -280px;
+  }
+</style>
+<body>
+ <div>
+         <ul class="head_line">
+          <li><a href="{% url 'home' %}">Head page</a></li>
+          <li><a href="http://127.0.0.1:8000/my_shop_app/catalog/menu/">Catalog</a></li>
+          <li><a href="{% url 'about_us' %}">About</a></li>
+          <li><a href="{% url 'log_page' %}">Log in</a></li>
+      </ul>
+ </div>
+ <div>
+     <p class="about_us">
+         Welcome to "Odessa Pizza" - your corner of taste in the heart of Odessa!
+
+We are a team of passionate culinary experts dedicated to the art of creating the perfect pizza. In each of our pizzas, we put not only fresh ingredients and craftsmanship,
+         but also a piece of our love for cooking. Our goal is not just to offer you pizza, but to create a real taste experience that will be remembered by each of our guests.
+
+What makes Odessa Pizza unique?
+
+Premium Quality Ingredients: We carefully select only the freshest, highest quality ingredients. From juicy tomatoes to aromatic cheese, every element of our pizza is guaranteed to be of the highest quality.
+
+Craftsmanship and tradition: Our chefs are true masters of their craft who adhere to the best pizzaiolo traditions. The secret to perfect dough and sauce is our professional passion.
+
+Variety for Everyone: Whether you're a connoisseur of classic flavors or prefer to experiment with unusual combinations, we have a pizza for every taste. We also offer vegetarian and dietary options to suit all guests.
+
+Cozy atmosphere: "Odessa Pizza" is not just a place to eat, but also a cozy space where everyone can enjoy lunch, dinner or meeting with friends. We have a warm atmosphere and friendly service.
+
+Join us at Odessa Pizza and give your palate a real holiday! Come and enjoy the best pizza in Odessa, created with love and care.
+
+Thank you for choosing us!
+     </p>
+ </div>
+ <div class="inst">
+<a href="https://www.instagram.com/"><img class="instagram" src="{% static 'instagram.png' %}" width="300"></a>
+     </div>
+ <div class="face_b">
+     <a href="https://www.facebook.com/"><img class="facebook" src="{% static 'facebook.png' %}" width="250"></a>
+ </div>
+</body>
+</html>

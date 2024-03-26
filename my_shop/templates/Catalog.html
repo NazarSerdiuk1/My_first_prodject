@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+<style>
+  body{
+        background-color:#F5DEB3;
+  }
+  .head_line {
+            list-style:none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            width:1920px;
+            margin-left:-8px;
+            margin-top: -10px;
+            border-radius: 30px;
+  }
+  .head_line li {
+            width: 25%;
+            margin: 0;
+            padding: 0;
+  }
+  .head_line a {
+            background: #FAEBD7;
+            display: block;
+            color: black;
+            font-size: 40px;
+            text-decoration: none;
+            text-align:center;
+            padding: 10px;
+  }
+  .head_line li:hover a{
+            background: #FAF0E6;
+  }
+  .f_ul{
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+    text-align:center;
+  }
+  .f_ul li{
+    background: #FAEBD7;
+    width: 45%;
+    margin-left: 10px;
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+  .f_ul li:hover a{
+        background: #FAF0E6;
+        display: block;
+        border-radius: 10px;
+  }
+  .products{
+    list-style-type: none;
+    font-size: 15px;
+    display:flex;
+    flex-wrap: wrap;
+
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .order_prod li:hover a{
+        background: none;
+  }
+</style>
+</head>
+<body>
+    <div>
+         <ul class="head_line">
+          <li><a href="{% url 'home' %}">Head page</a></li>
+          <li><a href="http://127.0.0.1:8000/my_shop_app/catalog/menu/">Catalog</a></li>
+          <li><a href="{% url 'about_us' %}">About</a></li>
+          <li><a href="{% url 'log_page' %}">Log in</a></li>
+      </ul>
+    </div>
+    <ul class="f_ul">
+        {% for element in category %}
+       <li><a href="http://127.0.0.1:8000/my_shop_app/catalog/{{ element.title}}/">{{ element.title }}</a></li>
+
+        {% endfor %}
+    </ul>
+    <ul class="products">
+    {% for element in products %}
+        <li class="order_prod">
+            <a href="{% url 'product_detail' element.id %}"><img src="data:image/jpg;base64, {{ element.base_64 }}" width="300"/>
+            <div>
+                <b>Name:</b> {{ element.title }}<br>
+                <b>Price:</b> {{ element.price }}<br>
+            </div>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+<!--#FFEBCD-->

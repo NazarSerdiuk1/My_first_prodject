@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log page</title>
+<style>
+   body{
+     background-image: url('{% static "ods_2.jpg" %}');
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
+  .head_line {
+            list-style:none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            width:1920px;
+            margin-left:-8px;
+            margin-top: -10px;
+            border-radius: 30px;
+  }
+  .head_line li {
+            width: 25%;
+            margin: 0;
+            padding: 0
+  }
+  .head_line a {
+            background: #FAEBD7;
+            display: block;
+            color: black;
+            font-size: 40px;
+            text-decoration: none;
+            text-align:center;
+            padding: 10px;
+  }
+  li:hover a{
+            background: #FAF0E6;
+  }
+
+  .h_dv{
+        margin-left: 750px;
+        margin-top: 110px;
+        width:300px;
+        background: #f5f5f5;
+        padding:10px;
+        height:500px;
+        border-radius: 10px 10px 10px 10px;
+        font-family: Arial;
+  }
+  h3{
+        text-align: center;
+  }
+  label{
+        font-size: 12px;
+  }
+  .f_p{
+        font-size: 12px;
+        margin-left: 170px;
+        color: gray;
+        border:none;
+        background:none;
+  }
+  input{
+        width: 260px;
+  }
+  .g2_p{
+        margin-top: 60px;
+        font-size: 13px;
+        margin-left: 90px;
+        color: gray;
+  }
+  .su{
+        margin-top: 20px;
+        font-size: 13px;
+        margin-left: 120px;
+        border: none;
+        background: none;
+  }
+  .f_but{
+        margin-left: 20px;
+        width: 250px;
+        border-radius: 15px 15px 15px 15px;
+        border: none;
+        padding: 5px;
+        color: white;
+        background: black;
+        margin-top:10px;
+  }
+  .g_p{
+        font-size: 12px;
+        margin-left: 100px;
+        color: gray;
+        margin-top: 40px;
+  }
+  .FC{
+        border: none;
+        background: blue;
+        color: white;
+        padding: 4px;
+        width: 90px;
+        margin-left: 50px;
+  }
+  .Goog{
+        border: none;
+        background: white;
+        color: black;
+        padding: 4px;
+        width: 90px;
+        margin-left: 10px;
+  }
+  .fc{
+        width:15px;
+        margin-left-1px;
+  }
+  .google{
+         width:18px;
+        margin-left: -15px;
+        margin-top:1px;
+  }
+  form{
+        color: black;
+        list-style: none;
+  }
+</style>
+</head>
+<body>
+ <div>
+        <ul class="head_line">
+          <li><a href="{% url 'home' %}">Head page</a></li>
+          <li><a href="http://127.0.0.1:8000/my_shop_app/catalog/menu/">Catalog</a></li>
+          <li><a href="{% url 'about_us' %}">About</a></li>
+          <li><a href="{% url 'log_page' %}">Log in</a></li>
+      </ul>
+ </div>
+<div class="h_dv">
+ <form method="post" action="" class="f_form">
+    {% csrf_token %}
+    {{ login_form.as_p }}
+    <button class="f_but" type="submit">Log in</button>
+</form><br>
+
+<form method="post" action="" class="s_form">
+    {% csrf_token %}
+    {{ registration_form.Username.label_tag }}: {{ registration_form.Username }}<br>
+    <br>
+    {{ registration_form.Password.label_tag }}: {{ registration_form.Password }}<br>
+    <br>
+    {{ registration_form.phone.label_tag }}: {{ registration_form.phone }}<br>
+    <br>
+    <button class="f_but" type="submit">Sign Up</button>
+</form>
+</div>
+</body>
+</html>
